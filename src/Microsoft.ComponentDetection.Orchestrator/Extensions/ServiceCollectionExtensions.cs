@@ -7,7 +7,6 @@ using Microsoft.ComponentDetection.Detectors.CocoaPods;
 using Microsoft.ComponentDetection.Detectors.Conan;
 using Microsoft.ComponentDetection.Detectors.Dockerfile;
 using Microsoft.ComponentDetection.Detectors.DotNet;
-using Microsoft.ComponentDetection.Detectors.Fcib;
 using Microsoft.ComponentDetection.Detectors.Go;
 using Microsoft.ComponentDetection.Detectors.Gradle;
 using Microsoft.ComponentDetection.Detectors.Ivy;
@@ -20,6 +19,7 @@ using Microsoft.ComponentDetection.Detectors.Pnpm;
 using Microsoft.ComponentDetection.Detectors.Poetry;
 using Microsoft.ComponentDetection.Detectors.Ruby;
 using Microsoft.ComponentDetection.Detectors.Rust;
+using Microsoft.ComponentDetection.Detectors.SecuritySensitiveBinary;
 using Microsoft.ComponentDetection.Detectors.Spdx;
 using Microsoft.ComponentDetection.Detectors.Swift;
 using Microsoft.ComponentDetection.Detectors.Uv;
@@ -89,7 +89,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IComponentDetector, DotNetComponentDetector>();
 
         // Fcib
-        services.AddSingleton<IComponentDetector, SensitiveBinaryDetector>();
+        services.AddSingleton<IComponentDetector, SecuritySensitiveBinaryDetector>();
 
         // Go
         services.AddSingleton<IComponentDetector, GoComponentDetector>();
