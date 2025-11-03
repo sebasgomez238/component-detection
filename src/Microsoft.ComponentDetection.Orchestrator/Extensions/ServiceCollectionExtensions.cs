@@ -19,6 +19,7 @@ using Microsoft.ComponentDetection.Detectors.Pnpm;
 using Microsoft.ComponentDetection.Detectors.Poetry;
 using Microsoft.ComponentDetection.Detectors.Ruby;
 using Microsoft.ComponentDetection.Detectors.Rust;
+using Microsoft.ComponentDetection.Detectors.SecuritySensitiveBinary;
 using Microsoft.ComponentDetection.Detectors.Spdx;
 using Microsoft.ComponentDetection.Detectors.Swift;
 using Microsoft.ComponentDetection.Detectors.Uv;
@@ -86,6 +87,9 @@ public static class ServiceCollectionExtensions
 
         // DotNet
         services.AddSingleton<IComponentDetector, DotNetComponentDetector>();
+
+        // SensitiveBinary
+        services.AddSingleton<IComponentDetector, SecuritySensitiveBinaryDetector>();
 
         // Go
         services.AddSingleton<IComponentDetector, GoComponentDetector>();
